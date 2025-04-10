@@ -10,13 +10,13 @@ https://django-template.vercel.app/
 
 ## How it Works
 
-Our Django application, `example` is configured as an installed application in `api/settings.py`:
+Our Django application, `tts_app` is configured as an installed application in `api/settings.py`:
 
 ```python
 # api/settings.py
 INSTALLED_APPS = [
     # ...
-    'example',
+    'exampletts_app',
 ]
 ```
 
@@ -41,7 +41,7 @@ The corresponding `WSGI_APPLICATION` setting is configured to use the `app` vari
 WSGI_APPLICATION = 'api.wsgi.app'
 ```
 
-There is a single view which renders the current time in `example/views.py`:
+There is a single view which renders the current time in `tts_app/views.py`:
 
 ```python
 # example/views.py
@@ -69,7 +69,7 @@ This view is exposed a URL through `example/urls.py`:
 # example/urls.py
 from django.urls import path
 
-from example.views import index
+from tts_app.views import index
 
 
 urlpatterns = [
@@ -85,7 +85,7 @@ from django.urls import path, include
 
 urlpatterns = [
     ...
-    path('', include('example.urls')),
+    path('', include('tts_app.urls')),
 ]
 ```
 
